@@ -1,0 +1,224 @@
+/* Définition des variables CSS */
+:root {
+  --hue: 200; /* Valeur de l'attribut --hue, à personnaliser */
+  --hue-complimentary1: 100; /* Valeur de l'attribut --hue-complimentary1, à personnaliser */
+  --hue-complimentary2: 300; /* Valeur de l'attribut --hue-complimentary2, à personnaliser */
+  --dark-color: hsl(var(--hue), 100%, 9%);
+  --light-color: hsl(var(--hue), 95%, 98%);
+  --base: hsl(var(--hue), 95%, 50%);
+  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
+  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+  --font-family: "Poppins", system-ui;
+  --bg-gradient: linear-gradient(
+      to bottom,
+      hsl(var(--hue), 95%, 99%),
+      hsl(var(--hue), 95%, 84%)
+  );
+}
+
+/* Réinitialisation des styles par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Amélioration de la police sur les systèmes d'exploitation */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Styles pour centrer une image horizontalement */
+.centered-image23 {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Styles du corps de la page */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 5rem;
+  font-family: var(--font-family);
+  background-color: #202020;
+}
+
+/* Styles pour un élément de toile d'arrière-plan */
+.orb-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Styles pour le texte en gras */
+strong {
+  font-weight: 600;
+}
+
+/* Styles pour un élément d'overlay */
+.overlay {
+  margin-top: 1rem;
+  max-width: 1140px;
+  max-height: auto;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  background: #191919;
+  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Styles pour un élément d'overlay avec une image */
+.overlayimage {
+  max-width: auto;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  background: rgba(48, 48, 48, 0.375);
+  box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Styles pour le contenu de l'overlay */
+.overlay__inner {
+  max-width: 36rem;
+}
+
+/* Styles pour le titre de l'overlay */
+.overlay__title {
+  font-size: 1.875rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+}
+
+.overlay__title2 {
+  font-size: 1.5rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+}
+
+/* Styles pour le texte générique */
+.Texte {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+}
+
+/* Styles pour la description de l'overlay */
+.overlay__description {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+/* Styles pour les liens */
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Masquer la toile d'arrière-plan en cas de contraste élevé */
+@media (prefers-contrast: high) {
+  .orb-canvas {
+      display: none;
+  }
+}
+
+/* Styles pour les écrans jusqu'à 1140px de largeur */
+@media only screen and (max-width: 1280px) {
+  
+  .overlay {
+    margin-top: 1rem;
+    max-width: 70%;
+    max-height: auto;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    background: #191919;
+    box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+  }
+
+}
+
+/* Styles pour les écrans jusqu'à 840px de largeur */
+@media only screen and (max-width: 840px) {
+  body {
+      padding: 1.5rem;
+  }
+  .overlay {
+      padding: 4rem;
+      height: auto;
+  }
+  .overlay__title {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      margin-bottom: 0.2rem;
+  }
+  .overlay__title2 {
+      font-size: 1rem;
+      line-height: 2rem;
+      margin-bottom: 1.5rem;
+  }
+  .Texte {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      margin-bottom: 2rem;
+  }
+  .overlay__description {
+      font-size: 0rem;
+      line-height: 1.5rem;
+      margin-bottom: 2.5rem;
+  }
+}
+
+/* Styles pour les écrans jusqu'à 600px de largeur */
+@media only screen and (max-width: 600px) {
+  .overlay {
+      padding: 1.5rem;
+  }
+  .overlay__btns {
+      flex-wrap: wrap;
+  }
+  .overlay__btn {
+      width: 100%;
+      font-size: 0.75rem;
+      margin-right: 0;
+  }
+  .overlay__btn:first-child {
+      margin-bottom: 1rem;
+  }
+}
