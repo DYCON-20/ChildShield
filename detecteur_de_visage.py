@@ -15,7 +15,7 @@ faces = face_cascade.detectMultiScale(image, scaleFactor=1.1, minNeighbors=5, mi
 
 # Dessiner des rectangles autour des visages détectés
 for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 102)
 
 # Afficher l'image avec les rectangles
 cv2.imshow('Face Detection', image)
